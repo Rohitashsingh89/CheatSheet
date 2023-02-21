@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    height: 30vh;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.heading{
+    height: 10vh;
+    text-align: center;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    height: 40px;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+nav ul li{
+    list-style: none;
+    padding-right: 20px;
+}
+nav ul a{
+    list-style: none;
+    
+}
+nav ul li:hover {
+    cursor: pointer;
+    background: grey;
+    border-radius: 5px;
+    padding: 10px;
+}
+.title{
+    padding: 20px;
+}
+.event{
+    display: flex;
+    flex-direction: row;
+}
+.box1{
+    background-color: aliceblue;
+    min-height: 100vh;
+}
+.py {
+    padding-top: 10px;
+}
+#admit{
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+#result{
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+#jobs{
+    margin: 0 1rem;
+    padding: 0.5rem;
+}
+.footer {
+    background-color: white;
+    color: black;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+}
