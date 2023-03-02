@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Cheat Sheet</title>
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        .logo {
+            width: 42px;
+            padding-right: 10px;
+        }
+
+        .header {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+            background-color: black;
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            padding-top: 0px;
+        }
+
+        .row {
+            background-color: peachpuff;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .col {
+            width: 60%;
+            padding: 2rem;
+            background-color: skyblue;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            padding: 30px;
+        }
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+        }
+        .table {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            font-size: 16px;
+        }
+        .table-bordered {
+            border: 0;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th td {
+            padding-top: 10px;
+        }
+        
+        
+
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+        }
+
+
+        @media screen and (max-width:800px) {
+            .col {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .row {
+                padding: 10px;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            .col {
+                width: 100%;
+                padding: 2rem;
+            }
+
+            .row {
+                padding: 2rem;
+            }
+
+            body {
+                padding: 20px;
+            }
+
+        }
+        @media screen and (max-width: 300px) {
+            body {
+                padding: 0;
+            }
+            .row {
+                padding: 10px;
+            }
+            .col {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>
+            <img class="logo" src="/pytho.png" alt="This is python image">
+            Python Cheat Sheet
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            <article class="article">
+                <h1>
+                    Python - Error Types
+                </h1>
+                <hr>
+                <p>
+                    The most common reason of an error in a Python program is when a certain statement is not in
+                    accordance with the prescribed usage.
+                    Such an error is called a syntax error. The Python interpreter immediately reports it, usually along
+                    with the reason.
+                </p>
+                <p>
+                    Example: Error
+                </p>                
+                <div class="panel-body">
+                    <pre class="language-python"><code>&gt;&gt;&gt; print "hello"
+        <span style="color:red;">SyntaxError: Missing parentheses in call to 'print'. Did you mean print("hello")?</span>
+    </code></pre>
+                </div>
+                <p>
+                    In Python 3.x, print is a built-in function and requires parentheses. The statement above violates
+                    this usage and hence syntax error is displayed.
+                </p>
+                <p>
+                    Many times though, a program results in an error after it is run even if it doesn't have any syntax
+                    error. Such an error is a runtime error, called an exception.
+                    A number of built-in exceptions are defined in the Python library.
+                    Let's see some common error types.
+                </p>
+                <p>The following table lists important built-in exceptions in Python.</p>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered ">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Exception
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    AssertionError
+                                </td>
+                                <td>
+                                    Raised when the assert statement fails.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    AttributeError
+                                </td>
+                                <td>
+                                    Raised on the attribute assignment or reference fails.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    EOFError
+                                </td>
+                                <td>
+                                    Raised when the input() function hits the end-of-file condition.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    FloatingPointError
+                                </td>
+                                <td>
+                                    Raised when a floating point operation fails.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    GeneratorExit
+                                </td>
+                                <td>
+                                    Raised when a generator's close() method is called.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ImportError
+                                </td>
+                                <td>
+                                    Raised when the imported module is not found.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    IndexError
+                                </td>
+                                <td>
+                                    Raised when the index of a sequence is out of range.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    KeyError
+                                </td>
+                                <td>
+                                    Raised when a key is not found in a dictionary.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    KeyboardInterrupt
+                                </td>
+                                <td>
+                                    Raised when the user hits the interrupt key (Ctrl+c or delete).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    MemoryError
+                                </td>
+                                <td>
+                                    Raised when an operation runs out of memory.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    NameError
+                                </td>
+                                <td>
+                                    Raised when a variable is not found in the local or global scope.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    NotImplementedError
+                                </td>
+                                <td>
+                                    Raised by abstract methods.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    OSError
+                                </td>
+                                <td>
+                                    Raised when a system operation causes a system-related error.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    OverflowError
+                                </td>
+                                <td>
+                                    Raised when the result of an arithmetic operation is too large to be represented.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ReferenceError
+                                </td>
+                                <td>
+                                    Raised when a weak reference proxy is used to access a garbage collected referent.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    RuntimeError
+                                </td>
+                                <td>
+                                    Raised when an error does not fall under any other category.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    StopIteration
+                                </td>
+                                <td>
+                                    Raised by the next() function to indicate that there is no further item to be
+                                    returned by the iterator.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    SyntaxError
+                                </td>
+                                <td>
+                                    Raised by the parser when a syntax error is encountered.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    IndentationError
+                                </td>
+                                <td>
+                                    Raised when there is an incorrect indentation.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    TabError
+                                </td>
+                                <td>
+                                    Raised when the indentation consists of inconsistent tabs and spaces.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    SystemError
+                                </td>
+                                <td>
+                                    Raised when the interpreter detects internal error.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    SystemExit
+                                </td>
+                                <td>
+                                    Raised by the sys.exit() function.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    TypeError
+                                </td>
+                                <td>
+                                    Raised when a function or operation is applied to an object of an incorrect type.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UnboundLocalError
+                                </td>
+                                <td>
+                                    Raised when a reference is made to a local variable in a function or method, but no
+                                    value has been bound to that variable.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UnicodeError
+                                </td>
+                                <td>
+                                    Raised when a Unicode-related encoding or decoding error occurs.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UnicodeEncodeError
+                                </td>
+                                <td>
+                                    Raised when a Unicode-related error occurs during encoding.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UnicodeDecodeError
+                                </td>
+                                <td>
+                                    Raised when a Unicode-related error occurs during decoding.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    UnicodeTranslateError
+                                </td>
+                                <td>
+                                    Raised when a Unicode-related error occurs during translation.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ValueError
+                                </td>
+                                <td>
+                                    Raised when a function gets an argument of correct type but improper value.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    ZeroDivisionError
+                                </td>
+                                <td>
+                                    Raised when the second operand of a division or module operation is zero.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+            </div>
+            <article>
+                <div class="col">
+                <h2>
+                    IndexError
+                </h2>
+                <hr>
+                <p>
+                    The <code>IndexError</code> is thrown when trying to access an item at an invalid index.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: IndexError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; L1=[1,2,3]
+        &gt;&gt;&gt; L1[3]
+        Traceback (most recent call last):
+        File "&lt;pyshell#18&gt;", line 1, in &lt;module&gt;
+                    
+        L1[3]
+        IndexError: list index out of range
+        </code></pre>
+                    </div>
+                </div>
+                <h2>ModuleNotFoundError</h2>
+                <hr>
+                <p>
+                    The <code>ModuleNotFoundError</code> is thrown when a module could not be found.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: ModuleNotFoundError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; import notamodule
+        Traceback (most recent call last):
+        File "&lt;pyshell#10&gt;", line 1, in &lt;module&gt;
+                    
+        import notamodule
+        ModuleNotFoundError: No module named 'notamodule'
+        </code></pre>
+                    </div>
+                </div>
+                <h2>KeyError</h2>
+                <hr>
+                <p>
+                    The <code>KeyError</code> is thrown when a key is not found.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: KeyError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; D1={'1':"aa", '2':"bb", '3':"cc"}
+        &gt;&gt;&gt; D1['4']
+        Traceback (most recent call last):
+        File "&lt;pyshell#15&gt;", line 1, in &lt;module&gt;
+        
+                    
+        D1['4']
+        KeyError: '4'
+        </code></pre>
+                    </div>
+                </div>
+                <h2>ImportError</h2>
+                <hr>
+                <p>
+                    The <code>ImportError</code> is thrown when a specified function can not be found.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: ImportError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; from math import cube
+        Traceback (most recent call last):
+        File "&lt;pyshell#16&gt;", line 1, in &lt;module&gt;
+                    
+        from math import cube
+        ImportError: cannot import name 'cube'
+        </code></pre>
+                    </div>
+                </div>
+                <h2>StopIteration</h2>
+                <hr>
+                <p>
+                    The <code>StopIteration</code> is thrown when the <code>next()</code> function goes beyond the
+                    iterator items.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: StopIteration</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; it=iter([1,2,3])
+        &gt;&gt;&gt; next(it)
+        1
+        &gt;&gt;&gt; next(it)
+        2
+        &gt;&gt;&gt; next(it)
+        3
+        &gt;&gt;&gt; next(it)
+        Traceback (most recent call last):
+        File "&lt;pyshell#23&gt;", line 1, in &lt;module&gt;
+                    
+        next(it)
+        StopIteration
+        </code></pre>
+                    </div>
+                </div>
+                <h2>TypeError</h2>
+                <hr>
+                <p>
+                    The <code>TypeError</code> is thrown when an operation or function is applied to an object of an
+                    inappropriate type.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: TypeError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; '2'+2
+        Traceback (most recent call last):
+        File "&lt;pyshell#23&gt;", line 1, in &lt;module&gt;
+                    
+        '2'+2
+        TypeError: must be str, not int
+        </code></pre>
+                    </div>
+                </div>
+                <h2>ValueError</h2>
+                <hr>
+                <p>
+                    The <code>ValueError</code> is thrown when a function's argument is of an inappropriate type.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: ValueError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; int('xyz')
+        Traceback (most recent call last):
+        File "&lt;pyshell#14&gt;", line 1, in &lt;module&gt;
+                    
+        int('xyz')
+        ValueError: invalid literal for int() with base 10: 'xyz'
+        </code></pre>
+                    </div>
+                </div>
+                <h2>NameError</h2>
+                <hr>
+                <p>
+                    The <code>NameError</code> is thrown when an object could not be found.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: NameError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; age
+        Traceback (most recent call last):
+        File "&lt;pyshell#6&gt;", line 1, in &lt;module&gt;
+                    
+        age
+        NameError: name 'age' is not defined
+        </code></pre>
+                    </div>
+                </div>
+                <h2>ZeroDivisionError</h2>
+                <hr>
+                <p>
+                    The <code>ZeroDivisionError</code> is thrown when the second operator in the division is zero.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: ZeroDivisionError</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; x=100/0
+        Traceback (most recent call last):
+        File "&lt;pyshell#8&gt;", line 1, in &lt;module&gt;
+                    
+        x=100/0
+        ZeroDivisionError: division by zero
+        </code></pre>
+                    </div>
+                </div>
+                <h2>KeyboardInterrupt</h2>
+                <hr>
+                <p>
+                    The <code>KeyboardInterrupt</code> is thrown when the user hits the interrupt key (normally
+                    Control-C) during the execution of the program.
+                </p>
+
+                <div class="card code-panel">
+                    <div class="card-header example-header">
+                        <div class="example-caption">Example: KeyboardInterrupt</div>
+                    </div>
+                    <div class="panel-body">
+                        <pre class="language-python"><code>&gt;&gt;&gt; name=input('enter your name')
+        enter your name^c
+        Traceback (most recent call last):
+        File "&lt;pyshell#9&gt;", line 1, in &lt;module&gt;
+                    
+        name=input('enter your name')
+        KeyboardInterrupt
+        </code></pre>
+                    </div>
+                </div>
+
+                <p>Learn how to handle exceptions in Python in the next chapter.</p>
+            </article>
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>
+            Made with love 🧡🤍💚 by Rohitash Singh
+        </p>
+    </div>
+
+    <script src="prism.js"></script>
+</body>
+
+</html>

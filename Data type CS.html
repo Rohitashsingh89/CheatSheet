@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatype Cheat Sheet</title>
+    <link rel="stylesheet" href="prism.css">
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 20px;
+        }
+        .logo {
+            width: 42px;
+            padding-right: 10px;
+        }
+        .header {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+            background-color: black;
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+        .header h1 {
+            padding-top: 0px;
+        }
+        .row {
+            background-color: peachpuff;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .col {
+            width: 60%;
+            padding: 2rem;
+            background-color: skyblue;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding: 30px;
+        }
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+        }
+
+
+        @media screen and (max-width:800px) {
+            .col {
+                width: 100%;
+                padding: 10px;
+            }
+            .row {
+                padding: 10px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+        @media screen and (max-width:1024px) {
+            .col {
+                width: 100%;
+                padding: 2rem;
+            }
+            .row {
+                padding: 2rem;
+            }
+            body {
+                padding: 20px;
+            }
+        
+        }
+        @media screen and (max-width: 300px) {
+            body {
+                padding: 0;
+            }
+            .row {
+                padding: 10px;
+            }
+            .col {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <img class="logo" src="/pytho.png" alt="This is python image">
+            Python Cheat Sheet
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Data types </h2>
+                <br>
+                <hr>
+                <h1>Introduction to Data types</h1>
+                <p>
+                    In computer science and computer programming, a data type or simply type is a classification of data which tells the compiler or interpreter how the programmer intends to use the data. Most programming languages support various types of data, for example: real, integer or Boolean. A data type provides a set of values from which an expression (i.e. variable, function...) may take its values. This data type defines the operations that can be done on the data, the meaning of the data, and the way values of that type can be stored. A type of value from which an expression may take its value. 
+                </p>
+                <h2>Variables</h2>
+                <br>
+                <hr>
+                <p>
+                    Variables are nothing but reserved memory locations to store values. It means that when you create a variable, you reserve some space in the memory.
+                </p>
+                <p>
+                    Based on the data type of a variable, the interpreter allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to the variables, you can store integers, decimals or characters in these variables.
+                </p>
+                <h4>Assigning Values to Variables</h4>
+                <p>
+                    Python variables do not need explicit declaration to reserve memory space. The declaration happens automatically when you assign a value to a variable. The equal sign (=) is used to assign values to variables.
+                </p>
+                <p>
+                    The operand to the left of the = operator is the name of the variable and the operand to the right of the = operator is the value stored in the variable.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>counter = 100
+miles = 1000.0                   
+name = "John"                    
+print (counter)                    
+print (miles)                    
+print (name)</code></pre>
+
+                <p>
+                    Here, 100, 1000.0 and "John" are the values assigned to counter, miles, and name variables, respectively. This produces the following result -
+                </p>
+                <pre class="language-python"><code>100
+1000.0
+John
+</code></pre>
+                <h3>
+                    Multiple Assignment
+                </h3>
+                <p>
+                    Python allows you to assign a single value to several variables simultaneously.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>a = b = c = 1</code></pre>
+                <p>
+                    Here, an integer object is created with the value 1, and all the three variables are assigned to the same memory location. You can also assign multiple objects to multiple variables.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>a, b, c = 1, 2, "john"</code></pre>
+            </div>
+            <div class="col">
+                <h2>Standard Data Types</h2> <hr>
+                <p>
+                    Here, two integer objects with values 1 and 2 are assigned to the variables a and b respectively, and one string object with the value "john" is assigned to the variable c.
+                </p>
+                <p>
+                    The data stored in memory can be of many types. For example, a person's age is stored as a numeric value and his or her address is stored as alphanumeric characters. Python has various standard data types that are used to define the operations possible on them and the storage method for each of them.
+                </p>
+                <p>
+                    Python has five standard data types-
+                </p>
+                <ul>
+                    <li>Numbers</li>
+                    <li>String</li>
+                    <li>List</li>
+                    <li>Tuple</li>
+                    <li>Dictionary</li>
+                </ul>
+                <h2>
+                    Python Numbers
+                </h2>
+                <hr>
+                <p>
+                    Number data types store numeric values. Number objects are created when you assign a value to them.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>var1 = 1
+var2 = 10</code></pre>
+                <p>
+                    You can also delete the reference to a number object by using the del statement. The syntax of the del statement is −
+                </p>
+                <pre class="language-python"><code>del var1[,var2[,var3[....,varN]]]]</code></pre>
+                <p>
+                    You can delete a single object or multiple objects by using the del statement.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>del var
+del var_a, var_b
+</code></pre>
+                <p>
+                    Python supports three different numerical types -
+                </p>
+                <ul>
+                    <li>int (signed integers)</li>
+                    <li>float (floating point real values)</li>
+                    <li>complex (complex numbers)</li>
+                </ul>
+                <p>
+                    All integers in Python 3 are represented as long integers. Hence, there is no separate number type as long.
+                </p>
+            </div>
+            <div class="col">
+                <h2>
+                    Python Strings
+                </h2>
+                <hr>
+                <p>
+                    Strings in Python are identified as a contiguous set of characters represented in the quotation marks. Python allows either pair of single or double quotes. Subsets of strings can be taken using the slice operator ([ ] and [:] ) with indexes starting at 0 in the beginning of the string and working their way from -1 to the end.
+                </p>
+                <p>
+                    The plus (+) sign is the string concatenation operator and the asterisk (*) is the repetition operator.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>str = 'Hello World!'
+print (str)
+print (str[0])
+print (str[2:5])
+print (str[2:])
+print (str * 2)
+print (str + "TEST")
+</code></pre>
+                <p>
+                    This will produce the following result-
+                </p>
+                <pre class="language-python"><code>Hello World!
+H
+llo
+llo World!
+Hello World!Hello World!
+Hello World!TEST</code></pre>
+            </div>
+            <div class="col">
+                <h2>
+                    Python Lists
+                </h2>
+                <hr>
+                <p>
+                    Lists are the most versatile of Python's compound data types. A list contains items separated by commas and enclosed within square brackets ([]). To some extent, lists are similar to arrays in C. One of the differences between them is that all the items belonging to a list can be of different data type.
+                </p>
+                <p>
+                    The values stored in a list can be accessed using the slice operator ([ ] and [:]) with indexes starting at 0 in the beginning of the list and working their way to end -1. The plus (+) sign is the list concatenation operator, and the asterisk (*) is the repetition operator.
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+tinylist = [123, 'john']
+print (list)
+print (list[0])
+print (list[1:3])
+print (list[2:])
+print (tinylist * 2)
+print (list + tinylist)
+</code></pre>
+                <p>
+                    This produces the following result-
+                </p>
+                <pre class="language-python"><code>['abcd', 786, 2.23, 'john', 70.200000000000003]
+abcd
+[786, 2.23]
+[2.23, 'john', 70.200000000000003]
+[123, 'john', 123, 'john']
+['abcd', 786, 2.23, 'john', 70.200000000000003, 123, 'john']
+</code></pre>
+            </div>
+            <div class="col">
+                <h2>
+                    Python Tuples
+                </h2>
+                <hr>
+                <p>
+                    A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parenthesis.
+                </p>
+                <p>
+                    The main difference between lists and tuples is- Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists. 
+                </p>
+                <p>
+                    For example-
+                </p>
+                <pre class="language-python"><code>tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )
+tinytuple = (123, 'john')
+print (tuple)
+print (tuple[0])
+print (tuple[1:3])
+print (tuple[2:])
+print (tinytuple * 2)
+print (tuple + tinytuple)
+</code></pre>
+                <p>
+                    This produces the following result-
+                </p>
+                <pre class="language-python"><code>('abcd', 786, 2.23, 'john', 70.200000000000003)
+abcd
+(786, 2.23)
+(2.23, 'john', 70.200000000000003)
+(123, 'john', 123, 'john')
+('abcd', 786, 2.23, 'john', 70.200000000000003, 123, 'john')
+</code></pre>
+                <p>
+                    The following code is invalid with tuple, because we attempted to update a tuple, which is not allowed. Similar case is possible with lists -
+                </p>
+                <pre class="language-python"><code>tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )
+list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+tuple[2] = 1000
+list[2] = 1000
+</code></pre>
+            </div>
+            <div class="col">
+                <h2>
+                    Python Dictionary
+                </h2>
+                <hr>
+                <p>
+                    Python's dictionaries are kind of hash-table type. They work like associative arrays or hashes found in Perl and consist of key-value pairs. A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be any arbitrary Python object.
+                </p>
+                <p>
+                    Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]). For example-
+                </p>
+                <pre class="language-python"><code>dict = {}
+dict['one'] = "This is one"
+dict[2] = "This is two"
+tinydict = {'name': 'john','code':6734, 'dept': 'sales'}
+print (dict['one'])
+print (dict[2])
+print (tinydict)
+print (tinydict.keys())
+print (tinydict.values())
+</code></pre>
+                <p>
+                    This produces the following result-
+                </p>
+                <pre class="language-python"><code>This is one
+This is two
+{'dept': 'sales', 'code': 6734, 'name': 'john'}
+['dept', 'code', 'name']
+['sales', 6734, 'john']
+</code></pre>
+                <p>
+                    Dictionaries have no concept of order among the elements. It is incorrect to say that the elements are "out of order"; they are simply unordered.
+                </p>
+            </div>
+            <div class="col">
+                <h2>
+                    Data Type Conversion
+                </h2>
+                <hr>
+                <p>  
+                    Sometimes, you may need to perform conversions between the built-in types. To convert between types, you simply use the type-name as a function.
+                </p>
+                <p>
+                    There are several built-in functions to perform conversion from one data type to another. These functions return a new object representing the converted value.
+                </p>
+                <ul>
+                    <li><b>int(x [,base]): </b> Converts x to an integer. The base specifies the base if x is a string. </p>
+                    <li><b>float(x): </b> Converts x to a floating-point number. </p>
+                    <li><b>complex(real [,imag]) : </b> Creates a complex number. </p>
+                    <li><b>str(x) : </b> Converts object x to a string representation. </p>
+                    <li><b>repr(x) : </b> Converts object x to an expression string. </p>
+                    <li><b>eval(str) : </b> Evaluates a string and returns an object. </p>
+                    <li><b>tuple(s) : </b> Converts s to a tuple. </p>
+                    <li><b>list(s) : </b> Converts s to a list. </p>
+                    <li><b>set(s) : </b> Converts s to a set. </p>
+                    <li><b>dict(d) : </b> Creates a dictionary. d must be a sequence of (key,value) tuples. </p>
+                    <li><b>frozenset(s) : </b> Converts s to a frozen set. </p>
+                    <li><b>chr(x) : </b> Converts an integer to a character. </p>
+                    <li><b>unichr(x) : </b> Converts an integer to a Unicode character. </p>
+                    <li><b>ord(x) : </b> Converts a single character to its integer value. </p>
+                    <li><b>hex(x) : </b> Converts an integer to a hexadecimal string. </p>
+                    <li><b>oct(x) : </b> Converts an integer to an octal string. </p>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>
+            Made with love 🧡🤍💚 by Rohitash Singh
+        </p>
+    </div>
+        
+    <script src="prism.js"></script>
+</body>
+</html>

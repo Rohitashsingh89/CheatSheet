@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Cheat Sheet</title>
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 20px;
+        }
+        .logo {
+            width: 42px;
+            padding-right: 10px;
+        }
+        .header {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+            background-color: black;
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+        .header h1 {
+            padding-top: 0px;
+        }
+        .row {
+            background-color: peachpuff;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .col {
+            width: 60%;
+            padding: 2rem;
+            background-color: skyblue;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        ul {
+            padding: 30px;
+        }
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+        }
+
+
+        @media screen and (max-width:800px) {
+            .col {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .row {
+                padding: 10px;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width:1024px) {
+            .col {
+                width: 100%;
+                padding: 2rem;
+            }
+
+            .row {
+                padding: 2rem;
+            }
+
+            body {
+                padding: 20px;
+            }
+
+        }
+        @media screen and (max-width: 300px) {
+            body {
+                padding: 0;
+            }
+            .row {
+                padding: 10px;
+            }
+            .col {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>
+            <img class="logo" src="/pytho.png" alt="This is python image">
+            Python Cheat Sheet
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+
+                <h1 style="color:red;width:100px;margin: auto;">Loops</h1>
+                <hr>
+                <p>
+                    You go through your shopping list until you've collected every item from it. The dealer gives a card
+                    for each player until everyone has five. <br>
+                    The athlete does push-ups until reaching one-hundred...
+                    Loops everywhere! As for for loops in Python: they are perfect for processing repetitive programming
+                    tasks.
+                </p>
+                <p>
+                    In <b>Python</b>, and all other modern programming languages, iteration statements (also called loops)
+                    allow a set of instructions to be repeatedly executed until a certain condition is reached. This
+                    condition may be predetermined (as in the for loop) or open-ended (as in the while and do-while
+                    loops).
+                    <br>
+                    In another way we can say, A loop can be used to tell a program to execute statements repeatedly. Or
+                    we can say that a loop repeatedly executes the same set of instructions until a termination
+                    condition is met.
+                </p>
+                <img src="https://data36.com/wp-content/uploads/2018/01/python-for-logic-3-768x469.png" height="400"
+                    width="600" margin-left:500;>
+                <h3 style="color:red;">For Loop</h3>
+                <hr>
+                <p>Python implements an iterator-based 'for loop'. It is a type of 'for loop' that iterates over a
+                    list of items through an explicit or implicit iterator.</p>
+                <p>The loop is introduced by the keyword 'for' which is followed by a random variable name</p>
+                <p>which will contain the values supplied by the object.</p>
+                <p>This is the syntax of Python's 'for loop':</p>
+                <pre class="language-python"><code>for variable in list:
+    statements
+else:
+    statements
+</code></pre>
+
+                <p>Here is an example of a 'for loop' in Python:</p>
+
+                <pre class="language-python"><code>pizza = ["New York Style Pizza", "Pan Pizza", "Thin n Crispy Pizza", "Stuffed Crust","Pizza"]
+
+for choice in pizza:
+
+    if choice == "Pan Pizza":
+        print("Please pay $16. Thank you!")
+        print("Delicious, cheesy " + choice)
+    else:
+        print("Cheesy pan pizza is my all-time favorite!")
+        print("Finally, I'm full!")
+</code></pre>
+                <p>Run this and you'll get the following output on Python Shell:</p>
+                <pre class="language-python"><code>Delicious, cheesy New York Style Pizza
+Please pay $16. Thank you!
+Delicious, cheesy Pan Pizza
+Delicious, cheesy Thin n Crispy Pizza
+Delicious, cheesy Stuffed Crust Pizza
+Cheesy pan pizza is my all-time favorite!
+Finally, I'm full!
+</code></pre>
+
+                <h3>Using the range() Function with the for Loop
+                </h3>
+                <p>The range() function can be combined with the 'for loop' to supply the numbers required
+                    by the loop. In the following example, the range(1, x+1) provided the numbers 1 to 50
+                    needed by the 'for loop' to add the sum of 1 until 50:</p>
+                <pre class="language-python"><code>x = 50<br>
+total = 0<br>
+for number in range(1, x+1):<br>
+    total = total + number<br>
+print('Sum of 1 until %d: %d' % (x, total))
+</code></pre>
+                <p>The Python Shell will display:</p>
+                <pre class="language-python"><code>Sum of 1 until 50: 1275</code></pre>
+
+                <h3>The While Loop</h3>
+                <hr>
+                <p>A Python 'while loop' repeatedly carries out a target statement while the condition is true.
+                    The loop iterates as long as the defined condition is true. When it ceases to be true and
+                    becomes false, control passes to the first line after the loop.</p>
+
+                </p>The 'while loop' has the following syntax:</p><pre class="language-python"><code>condition
+    &rarr; statement
+    &rarr; statement
+</code></pre>
+                <p>Here is a simple 'while loop':<br>
+                <pre class="language-python"><code>counter = 0
+while (counter < 10):
+    print('The count is:' , counter)
+    counter = counter + 1
+print('Done!')
+</code></pre>
+                <p>If you run the code, you should see this output:</p>
+                <pre class="language-python"><code>    The count is: 0
+    The count is: 1
+    The count is: 2
+    The count is: 3
+    The count is: 4
+    The count is: 5
+    The count is: 6
+    The count is: 7
+    The count is: 8
+    The count is: 9
+    Done!
+</code></pre>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>
+            Made with love 🧡🤍💚 by Rohitash Singh
+        </p>
+    </div>
+
+    <script src="prism.js"></script>
+</body>
+
+</html>

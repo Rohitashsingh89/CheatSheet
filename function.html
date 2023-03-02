@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatype Cheat Sheet</title>
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 20px;
+        }
+        .logo {
+            width: 42px;
+            padding-right: 10px;
+        }
+        .header {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+            background-color: black;
+            color: white;
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+        .header h1 {
+            padding-top: 0px;
+        }
+        .row {
+            background-color: peachpuff;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .col {
+            width: 60%;
+            padding: 2rem;
+            background-color: skyblue;
+            border-radius: 10px;
+            margin: auto;
+            margin-bottom: 2rem;
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            padding-top: 10px;
+        }
+        ul {
+            padding: 30px;
+        }
+        .footer {
+            padding: 1rem;
+            text-align: center;
+            font-size: 15pt;
+        }
+
+
+        @media screen and (max-width:800px) {
+            .col {
+                width: 100%;
+                padding: 10px;
+            }
+            .row {
+                padding: 10px;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+        @media screen and (max-width:1024px) {
+            .col {
+                width: 100%;
+                padding: 2rem;
+            }
+            .row {
+                padding: 2rem;
+            }
+            body {
+                padding: 20px;
+            }
+        }
+        @media screen and (max-width: 300px) {
+            body {
+                padding: 0;
+            }
+            .row {
+                padding: 10px;
+            }
+            .col {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>
+            <img class="logo" src="/pytho.png" alt="This is python image">
+            Python Cheat Sheet
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>
+                    Fuctions
+                </h2>
+                <hr>
+                <p>
+                    A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.
+                </p>
+                <p>
+                    As you already know, Python gives you many built-in functions like print(), etc. but you can also create your own functions. These functions are called user-defined functions.
+                </p>
+                <h3>
+                    Difining a Fuction
+                </h3>
+                <hr>
+                <p>
+                    You can define functions to provide the required functionality. Here are simple rules to define a function in Python.
+                </p>
+                <ul>
+                    <li>
+                        Function blocks begin with the keyword def followed by the function name and parentheses ( ( ) ).
+                    </li>
+                    <li>
+                        Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.
+                    </li>
+                    <li>
+                        The first statement of a function can be an optional statement - the documentation string of the function or docstring.
+                    </li>
+                    <li>
+                        The code block within every function starts with a colon (:) and is indented.
+                    </li>
+                    <li>
+                        The statement return [expression] exits a function, optionally passing back an expression to the caller. A return statement with no arguments is the same as return None.
+                    </li>
+                </ul>
+                <hr>
+                <p>
+                    Syntax:
+                </p>
+                <pre class="language-python"><code>def functionname( parameters ):
+
+    "function_docstring"
+
+    function_suite
+
+    return [expression]</code></pre>
+                <p>
+                    By default, parameters have a positional behavior and you need to inform them in the same order that they were defined.
+                </p>
+                <p>
+                    example:-
+                </p>
+                <p>
+                    The following function takes a string as input parameter and prints it on the standard screen.
+                </p>
+                <pre class="language-python"><code>def printme( str ):
+
+    "This prints a passed string into this function"
+    
+    print (str)
+    
+    return
+</code></pre>
+            </div>
+            <div class="col">
+                <h2>
+                    Calling a Function
+                </h2>
+                <p>
+                    Defining a function gives it a name, specifies the parameters that are to be included in the function and structures the blocks of code.
+                </p>
+                <p>
+                    Once the basic structure of a function is finalized, you can execute it by calling it from another function or directly from the Python prompt. Following is an example to call the printme() function-
+                </p>
+                <pre class="language-python"><code>def printme( str ):
+
+    "This prints a passed string into this function"
+    
+    print (str)
+    
+    return
+    
+    printme("This is first call to the user defined function!")
+    
+    printme("Again second call to the same function")
+    
+    This is first call to the user defined function!
+    
+    Again second call to the same function
+                    
+</code></pre>
+                <h2>
+                    Pass by Reference vs Value
+                </h2>
+                <p>
+                    All parameters (arguments) in the Python language are passed by reference. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. For example-
+                </p>
+                <pre class="language-python"><code>def changeme( mylist ):
+
+    "This changes a passed list into this function"
+    
+    print ("Values inside the function before change: ", mylist)
+    
+    mylist[2]=50
+    
+    print ("Values inside the function after change: ", mylist)
+    
+    return
+    
+    mylist = [10,20,30]
+    
+    changeme( mylist )
+    
+    print ("Values outside the function: ", mylist)
+    
+    OUTPUT:
+    
+    Values inside the function before change: [10, 20, 30]
+    
+    Values inside the function after change: [10, 20, 50]
+    
+    Values outside the function: [10, 20, 50]
+                    
+</code></pre>
+            </div>
+            <div class="col">
+                <h2>
+                    Function Arguments
+                </h2>
+                <hr>
+                <p>
+                    You can call a function by using the following types of formal arguments-
+                </p>
+                <ul>
+                    <li>
+                        Required arguments
+                    </li>
+                    <li>
+                        Keyword arguments
+                    </li>
+                    <li>
+                        Default arguments
+                    </li>
+                    <li>
+                        Variable-length arguments
+                    </li>
+                </ul>
+                <h2>
+                    Required Arguments
+                </h2>
+                <hr>
+                <p>
+                    Required arguments are the arguments passed to a function in correct positional order. Here, the number of arguments in the function call should match exactly with the function definition.
+                </p>
+                <p>
+                    To call the function printme(), you definitely need to pass one argument, otherwise it gives a syntax error
+                </p>
+                <h2>
+                    Keyword Arguments
+                </h2>
+                <hr>
+                <p>
+                    Keyword arguments are related to the function calls. When you use keyword arguments in a function call, the caller identifies the arguments by the parameter name.
+                </p>
+                <p>
+                    This allows you to skip arguments or place them out of order because the Python interpreter is able to use the keywords provided to match the values with parameters. You can also make keyword calls to the printme() function
+                </p>
+                <h2>
+                    Default Arguments
+                </h2>
+                <hr>
+                <p>
+                    A default argument is an argument that assumes a default value if a value is not provided in the function call for that argument.
+                </p>
+                <h2>
+                    Variable-length Arguments
+                </h2>
+                <hr>
+                <p>
+                    You may need to process a function for more arguments than you specified while defining the function. These arguments are called variable-length arguments and are not named in the function definition, unlike required and default arguments.
+                </p>
+                <h2>
+                    The Anonymous Functions
+                </h2>
+                <hr>
+                <p>
+                    These functions are called anonymous because they are not declared in the standard manner by using thedefkeyword. You can use thelambdakeyword to create small anonymous functions.
+                </p>
+                <ul>
+                    <li>
+                        Lambda forms can take any number of arguments but return just one value in the form of an expression. They cannot contain commands or multiple expressions.
+                    </li>
+                    <li>
+                        An anonymous function cannot be a direct call to print because lambda requires an expression.
+                    </li>
+                    <li>
+                        Lambda functions have their own local namespace and cannot access variables other than those in their parameter list and those in the global namespace.
+                    </li>
+                    <li>
+                        Although it appears that lambdas are a one-line version of a function, they are not equivalent to inline statements in C or C++, whose purpose is to stack allocation by passing function, during invocation for performance reasons. 
+                    </li>
+                </ul>
+                <p>
+                    Syntax:
+                </p>
+                <pre class="language-python"><code>
+lambda [arg1 [,arg2,.....argn]]:expression
+
+example:
+
+    sum = lambda arg1, arg2: arg1 + arg2
+
+    print ("Value of total : ", sum( 10, 20 ))
+
+    print ("Value of total : ", sum( 20, 20 ))
+
+
+OUTPUT:
+
+Value of total : 30
+
+Value of total : 40
+</code></pre>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>
+            Made with love 🧡🤍💚 by Rohitash Singh
+        </p>
+    </div>
+        
+    <script src="prism.js"></script>
+</body>
+</html>
